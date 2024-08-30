@@ -133,9 +133,9 @@ Route::group(['middleware' => ['web', 'auth', 'roleAuth']], function () use ($co
         Route::post('profile', $controller_path . '\Backend\ProfileController@update')->name('profile.update');
 
         // Agents
-        Route::resource('agents', $controller_path . '\Backend\AgentsController');
-        Route::resource('agents_packages', $controller_path . '\Backend\AgentsPackagesController');
-        Route::post('agents_action', $controller_path . '\Backend\AgentsController@agentAction')->name('agents.action');
+        // Route::resource('agents', $controller_path . '\Backend\AgentsController');
+        // Route::resource('agents_packages', $controller_path . '\Backend\AgentsPackagesController');
+        // Route::post('agents_action', $controller_path . '\Backend\AgentsController@agentAction')->name('agents.action');
         
         // Enquiries
         Route::resource('enquiries', $controller_path . '\Backend\EnquiryController');
