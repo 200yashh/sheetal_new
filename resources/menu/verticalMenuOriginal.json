@@ -1,0 +1,16 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard-analytics"
+    },
+    {
+      "url": "/users",
+      "icon": "menu-icon tf-icons bx bx-user",
+      "name": "Users",
+      "slug": "tables-basic"
+    }
+  ]
+}

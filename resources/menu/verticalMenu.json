@@ -1,0 +1,92 @@
+{
+  "menu": [
+    {
+      "url": "/admin/dashboard",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": "dashboard"
+    },
+    {
+      "name": "Agents",
+      "icon": "menu-icon tf-icons bx bx-user-circle",
+      "slug": "agent",
+      "submenu": [
+        {
+          "url": "/admin/agents",
+          "name": "Agents",
+          "slug": "agents"
+        },
+        {
+          "url": "/admin/agents_packages",
+          "name": "Agents Packages",
+          "slug": "agents_packages"
+        }
+      ]
+    },
+    {
+      "name": "Enquiries",
+      "icon": "menu-icon tf-icons bx bx-message-square-dots",
+      "slug": "enquirie",
+      "submenu": [
+        {
+          "url": "/admin/enquiries",
+          "name": "Enquiry",
+          "slug": "enquiries"
+        }
+      ]
+    },
+    {
+      "name": "Frontend",
+      "icon": "menu-icon tf-icons bx bx-category-alt",
+      "slug": "frontend",
+      "submenu": [
+        {
+          "url": "/admin/frontend_testimonials",
+          "name": "Testimonials",
+          "slug": "frontend_testimonials"
+        }
+      ]
+    },
+    {
+      "name": "Master",
+      "icon": "menu-icon tf-icons bx bx-star",
+      "slug": "master",
+      "submenu": [
+        {
+          "url": "/admin/master_role",
+          "name": "Role",
+          "slug": "master_role"
+        },
+        {
+          "url": "/admin/master_package",
+          "name": "Package",
+          "slug": "master_package"
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "icon": "menu-icon tf-icons bx bx-cog",
+      "slug": "setting",
+      "submenu": [
+        {
+          "url": "/admin/settings",
+          "name": "General Settings",
+          "slug": "settings"
+        }
+      ]
+    },
+    {
+      "name": "System",
+      "icon": "menu-icon tf-icons bx bx-desktop",
+      "slug": "system",
+      "submenu": [
+        {
+          "url": "/admin/system_logs",
+          "name": "System Logs",
+          "slug": "system_logs"
+        }
+      ]
+    }
+  ]
+}

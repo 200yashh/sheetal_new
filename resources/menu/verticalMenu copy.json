@@ -1,0 +1,58 @@
+{
+  "menu": [
+    {
+      "url": "/admin/",
+      "name": "Dashboard",
+      "icon": "menu-icon tf-icons bx bx-home-circle",
+      "slug": null
+    },
+    {
+      "name": "Users",
+      "icon": "menu-icon tf-icons bx bx-user-circle",
+      "slug": "user",
+      "submenu": [
+        {
+          "url": "/admin/users",
+          "name": "Users",
+          "slug": "users"
+        },
+        {
+          "url": "/admin/users_deleted",
+          "name": "Deleted Users",
+          "slug": "users_deleted"
+        }
+      ]
+    },
+    {
+      "name": "Agents",
+      "icon": "menu-icon tf-icons bx bx-user-circle",
+      "slug": "agent",
+      "permitted_to" : [1],
+      "submenu": [
+        {
+          "url": "/admin/agents",
+          "name": "Agents",
+          "slug": "agents"
+        }
+      ]
+    },
+    {
+      "name": "Master",
+      "icon": "menu-icon tf-icons bx bx-star",
+      "slug": "master",
+      "permitted_to" : [1],
+      "submenu": [
+        {
+          "url": "/admin/master_role",
+          "name": "Role",
+          "slug": "master_role"
+        },
+        {
+          "url": "/admin/master_package",
+          "name": "Package",
+          "slug": "master_package"
+        }
+      ]
+    }
+  ]
+}
