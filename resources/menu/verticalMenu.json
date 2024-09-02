@@ -7,23 +7,6 @@
       "slug": "dashboard"
     },
     {
-      "name": "Agents",
-      "icon": "menu-icon tf-icons bx bx-user-circle",
-      "slug": "agent",
-      "submenu": [
-        {
-          "url": "/admin/agents",
-          "name": "Agents",
-          "slug": "agents"
-        },
-        {
-          "url": "/admin/agents_packages",
-          "name": "Agents Packages",
-          "slug": "agents_packages"
-        }
-      ]
-    },
-    {
       "name": "Enquiries",
       "icon": "menu-icon tf-icons bx bx-message-square-dots",
       "slug": "enquirie",

@@ -145,18 +145,18 @@ class ApiController extends Controller
             ->orderBy('sequence')
             ->get()->toArray();
 
-        $testimonials = [];
+        $testimonialData = [];
         foreach ($query as $index => $value) {
-            $testimonials[$index]['id'] = $value['id'];
-            $testimonials[$index]['name'] = $value['name'];
-            $testimonials[$index]['description'] = $value['description'];
-            $testimonials[$index]['image_path'] = null;
+            $testimonialData[$index]['id'] = $value['id'];
+            $testimonialData[$index]['name'] = $value['name'];
+            $testimonialData[$index]['description'] = $value['description'];
+            $testimonialData[$index]['image_path'] = null;
             if (isset($value['photo']) && !empty($value['photo'])) {
-                $testimonials[$index]['image_path'] = asset('uploads/testimonials/' . $value['photo']);
+                $testimonialData[$index]['image_path'] = asset('uploads/testimonials/' . $value['photo']);
             }
         }
 
-        $this->_responseData['testimonials'] = $testimonials;
+        $this->_responseData['testimonialData'] = $testimonialData;
         return response()->json($this->_responseData, 200);
     }
 }

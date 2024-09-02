@@ -157,4 +157,7 @@ Route::group(['middleware' => ['web', 'auth', 'roleAuth']], function () use ($co
 
 // Frontend Routes
 Route::get('/', $controller_path . '\Frontend\PagesController@index');
+Route::get('/', $controller_path . '\Frontend\PagesController@index');
+Route::post('contact/send', $controller_path . '\Frontend\PagesController@senddata');
+
 Route::get('{page}', $controller_path . '\Frontend\PagesController@getPage');
