@@ -178,90 +178,38 @@
                 <div class="col-12 text-center">
                     <ul class="list-inline mb-5" id="portfolio-flters">
                         <li class="btn px-3 pe-4 active" data-filter="*">All</li>
-                        <li class="btn px-3 pe-4" data-filter=".first">Design</li>
-                        <li class="btn px-3 pe-4" data-filter=".second">Development</li>
+                        @if (!empty($category_data))
+                            @foreach ($category_data as $cKey => $cVal)
+                            <li class="btn px-3 pe-4" data-filter=".{{$cKey}}">{{$cVal}}</li>
+                            @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
             <div class="row g-4 portfolio-container">
-                <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.1s">
-                    <div class="position-relative rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-1.jpg') }}" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-light" href="{{ asset('frontend/img/portfolio-1.jpg') }}"
-                                data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                            <div class="mt-auto">
-                                <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                @if (!empty($projects))
+                    @foreach ($projects as $key => $val)
+                    @php
+                        $asset_url = 'frontend/img/portfolio-1.jpg';
+                        if (!empty($val['photo'])) {
+                            $asset_url = 'uploads/projects/'.$val['photo'];
+                        }
+                    @endphp
+                    <div class="col-lg-4 col-md-6 portfolio-item {{$val['name_slug']}} wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="{{ asset($asset_url) }}" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="{{ asset($asset_url) }}"
+                                    data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>{{$val['project_category']??''}}</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">{{$val['name']??''}}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.3s">
-                    <div class="position-relative rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-2.jpg') }}" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-light" href="{{ asset('frontend/img/portfolio-2.jpg') }}"
-                                data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                            <div class="mt-auto">
-                                <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.6s">
-                    <div class="position-relative rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-3.jpg') }}" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-light" href="{{ asset('frontend/img/portfolio-3.jpg') }}"
-                                data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                            <div class="mt-auto">
-                                <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.1s">
-                    <div class="position-relative rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-4.jpg') }}" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-light" href="{{ asset('frontend/img/portfolio-4.jpg') }}"
-                                data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                            <div class="mt-auto">
-                                <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.3s">
-                    <div class="position-relative rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-5.jpg') }}" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-light" href="{{ asset('frontend/img/portfolio-5.jpg') }}"
-                                data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                            <div class="mt-auto">
-                                <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.6s">
-                    <div class="position-relative rounded overflow-hidden">
-                        <img class="img-fluid w-100" src="{{ asset('frontend/img/portfolio-6.jpg') }}" alt="">
-                        <div class="portfolio-overlay">
-                            <a class="btn btn-light" href="{{ asset('frontend/img/portfolio-6.jpg') }}"
-                                data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
-                            <div class="mt-auto">
-                                <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
-                                <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
@@ -295,7 +243,7 @@
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    {{-- <div class="container-xxl py-5">
         <div class="container px-lg-5">
             <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="position-relative d-inline text-primary ps-4">Our Team</h6>
@@ -373,6 +321,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Team End -->
 @endsection

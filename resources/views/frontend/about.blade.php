@@ -102,10 +102,10 @@
                                     <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
                                     <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
                                 </div>
-                                <img class="img-fluid rounded w-100" src="{{asset('frontend/img/team-1.jpg')}}" alt="">
+                                <img class="img-fluid rounded w-100" src="{{asset('frontend/img/nilesh.jpeg')}}" height="300" alt="">
                             </div>
                             <div class="px-4 py-3">
-                                <h5 class="fw-bold m-0">Jhon Doe</h5>
+                                <h5 class="fw-bold m-0">Nilesh</h5>
                                 <small>CEO</small>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                                 <img class="img-fluid rounded w-100" src="{{asset('frontend/img/team-2.jpg')}}" alt="">
                             </div>
                             <div class="px-4 py-3">
-                                <h5 class="fw-bold m-0">Emma William</h5>
+                                <h5 class="fw-bold m-0">Sheetal</h5>
                                 <small>Manager</small>
                             </div>
                         </div>
@@ -139,7 +139,7 @@
                                 <img class="img-fluid rounded w-100" src="{{asset('frontend/img/team-3.jpg')}}" alt="">
                             </div>
                             <div class="px-4 py-3">
-                                <h5 class="fw-bold m-0">Noah Michael</h5>
+                                <h5 class="fw-bold m-0">Mann</h5>
                                 <small>Designer</small>
                             </div>
                         </div>

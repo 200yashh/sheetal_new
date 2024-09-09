@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
+use App\Models\Project;
+use App\Models\ProjectCategory;
 use App\Models\Testimonial;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -39,8 +41,10 @@ class PagesController extends Controller
                     $testimonialData[$index]['image_path'] = asset('uploads/testimonials/' . $value['photo']);
                 }
             }
-
-            $this->_viewData['testimonialData'] = $testimonialData;    
+            $this->_viewData['testimonialData'] = $testimonialData;
+            $this->_viewData['category_data'] = ProjectCategory::pluck('name', 'name_slug')->toArray();
+            $this->_viewData['projects'] = Project::select('projects.name','projects.photo','project_categories.name_slug','project_categories.name AS project_category')->where('status',1)->leftJoin('project_categories','project_categories.id','=','projects.project_type')->get()->toArray();
+            // dd($this->_viewData['projects']);
         }
 
         if (view()->exists("frontend." . $page)) {

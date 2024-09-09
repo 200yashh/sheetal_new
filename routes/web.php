@@ -148,6 +148,8 @@ Route::group(['middleware' => ['web', 'auth', 'roleAuth']], function () use ($co
         
         // Frontend
         Route::resource('frontend_testimonials', $controller_path . '\Backend\TestimonialsController');
+        Route::resource('frontend_projects', $controller_path . '\Backend\ProjectsController');
+        Route::resource('frontend_project_category', $controller_path . '\Backend\ProjectCategoryController');
 
         // Slugify
         Route::post('get_slug', $controller_path . '\Backend\Master\PackageController@getSlugOnAjax')->name('slugify.ajax');

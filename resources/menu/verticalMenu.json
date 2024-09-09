@@ -27,6 +27,16 @@
           "url": "/admin/frontend_testimonials",
           "name": "Testimonials",
           "slug": "frontend_testimonials"
+        },
+        {
+          "url": "/admin/frontend_projects",
+          "name": "Projects",
+          "slug": "frontend_projects"
+        },
+        {
+          "url": "/admin/frontend_project_category",
+          "name": "Projects Category",
+          "slug": "frontend_project_category"
         }
       ]
     },
